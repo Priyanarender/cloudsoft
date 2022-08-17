@@ -431,6 +431,9 @@ resource "aws_subnet" "outpost" {
 ################################################################################
 # Database subnet
 ################################################################################
+resource "aws_instance" "example"
+{
+}
 
 resource "aws_subnet" "database" {
   count = local.create_vpc && length(var.database_subnets) > 0 ? length(var.database_subnets) : 0
